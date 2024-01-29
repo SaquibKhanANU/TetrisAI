@@ -33,7 +33,7 @@ class Game:
         self.clock.tick(FPS)
 
     def draw(self):
-        self.screen.fill(color=(255, 255, 255))
+        self.screen.fill(color=LIGHT_BLACK)
         self.tetris.draw(self.screen)
         pg.display.flip()
 

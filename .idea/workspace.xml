@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88564bc3-4e39-4632-9b2a-fde0022a8215" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TetrisML.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetris.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetromino.py" afterDir="false" />
+    <list default="true" id="88564bc3-4e39-4632-9b2a-fde0022a8215" name="Changes" comment="Tetris collision">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetromino.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetromino.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,12 +191,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706404309890</updated>
-      <workItem from="1706404325267" duration="19865000" />
+      <workItem from="1706404325267" duration="24588000" />
     </task>
+    <task id="LOCAL-00001" summary="Tetris collision">
+      <option name="closed" value="true" />
+      <created>1706518004934</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706518004934</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Tetris collision" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tetris collision" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TetrisML$main.coverage" NAME="main Coverage Results" MODIFIED="1706515912663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />

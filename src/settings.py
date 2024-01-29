@@ -1,6 +1,9 @@
 import pygame as pg
 
 # CONSTANTS
+LIGHT_BLACK = (69, 69, 69)
+BLACK = (0, 0, 0)
+
 STARTING_ROW = 0
 STARTING_COL = 4
 TILE_SIZE = 40
