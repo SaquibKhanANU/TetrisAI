@@ -17,7 +17,7 @@ class Block(pg.sprite.Sprite):
             self.kill()
 
     def rotate(self, pivot_pos):
-        translate =self.pos - pivot_pos
+        translate = self.pos - pivot_pos
         rotated = translate.rotate(90)
         return rotated + pivot_pos
 

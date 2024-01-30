@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88564bc3-4e39-4632-9b2a-fde0022a8215" name="Changes" comment="Tetris collision">
+    <list default="true" id="88564bc3-4e39-4632-9b2a-fde0022a8215" name="Changes" comment="Tetris line clearer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
@@ -32,9 +32,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2bYuPK03uZbiqZJVzTS7k6Jyhob" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -70,6 +70,9 @@
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -133,6 +136,9 @@
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -153,6 +159,9 @@
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -172,7 +181,6 @@
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.tetris (1)" />
-        <item itemvalue="Python.tetris_board" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +199,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706404309890</updated>
-      <workItem from="1706404325267" duration="24588000" />
+      <workItem from="1706404325267" duration="24626000" />
+      <workItem from="1706577158864" duration="10194000" />
     </task>
     <task id="LOCAL-00001" summary="Tetris collision">
       <option name="closed" value="true" />
@@ -201,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706518004934</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Tetris line clearer">
+      <option name="closed" value="true" />
+      <created>1706523148234</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706523148234</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,9 +226,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Tetris collision" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tetris collision" />
+    <MESSAGE value="Tetris line clearer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tetris line clearer" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/TetrisML$main.coverage" NAME="main Coverage Results" MODIFIED="1706515912663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/TetrisML$main.coverage" NAME="main Coverage Results" MODIFIED="1706584572321" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
