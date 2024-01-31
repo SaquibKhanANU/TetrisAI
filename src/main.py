@@ -1,6 +1,7 @@
 from tetris import Tetris
 from settings import *
 import sys
+import pygame.freetype as ft
 
 
 class Game:
@@ -38,9 +39,26 @@ class Game:
         self.tetris.update(self.anim_trigger, self.fast_anim_trigger)
         self.clock.tick(FPS)
 
+    def draw_score(self):
+        font = ft.Font(None, 8)
+
+        font.render_to(self.screen, (WIN_W * 0.65, WIN_H * 0.2),
+                       text=f'HEIGHT: {self.tetris.height}', fgcolor='WHITE',
+                       size=TILE_SIZE * 0.5)
+        font.render_to(self.screen, (WIN_W * 0.65, WIN_H * 0.3),
+                       text=f'NUM HOLES: {self.tetris.number_of_holes}', fgcolor='WHITE',
+                       size=TILE_SIZE * 0.5)
+        font.render_to(self.screen, (WIN_W * 0.65, WIN_H * 0.5),
+                       text=f'SCORE: {self.tetris.score}', fgcolor='white',
+                       size=TILE_SIZE * 0.5)
+        font.render_to(self.screen, (WIN_W * 0.65, WIN_H * 0.4),
+                       text=f'NUM_LINES: {self.tetris.total_number_of_lines}', fgcolor='WHITE',
+                       size=TILE_SIZE * 0.5)
+
     def draw(self):
         self.screen.fill(color=LIGHT_BLACK)
         self.tetris.draw(self.screen)
+        self.draw_score()
         pg.display.flip()
 
     def run(self):

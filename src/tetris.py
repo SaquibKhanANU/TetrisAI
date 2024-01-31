@@ -16,23 +16,66 @@ class Tetris:
         self.sprite_group.add(self.current_tetromino.sprite_group)
         self.speed_up = False
 
+        self.points_per_line = {0: 0, 1: 100, 2: 300, 3: 700, 4: 1500}
+        self.full_lines = 0
+
+        self.score = 0
+        self.total_number_of_lines = 0
+        self.number_of_holes = 0
+        self.height = 0
+
+    def get_score(self):
+        self.score += self.points_per_line[self.full_lines]
+        self.total_number_of_lines += self.full_lines
+        self.number_of_holes = self.calculate_holes()
+        self.height = self.calculate_height()
+        self.full_lines = 0
+
+    def calculate_holes(self):
+        holes_count = 0
+
+        for col in range(self.board_width):
+            found_block = False
+            for row in range(self.board_height):
+                if self.field_array[row][col] != 0:
+                    found_block = True
+                elif self.field_array[row][col] == 0 and found_block:
+                    holes_count += 1
+
+        return holes_count
+
+    def calculate_height(self):
+        max_height = 0
+
+        for col in range(WIDTH):
+            for row in range(HEIGHT):
+                if self.field_array[row][col] != 0:
+                    # Found the top non-empty block in this column
+                    height = HEIGHT - row
+                    max_height = max(max_height, height)
+                    break  # Move to the next column
+
+        return max_height
+
     def add_tetromino_to_array(self):
         for block in self.current_tetromino.blocks:
             x, y = int(block.pos.x), int(block.pos.y)
             self.field_array[y][x] = block
 
     def get_new_tetromino(self):
-        # tetromino_type = random.choice(list(TETROMINOES.keys()))
-        tetromino_type = 'O'
+        tetromino_type = random.choice(list(TETROMINOES.keys()))
         tetromino_info = TETROMINOES[tetromino_type]
         self.current_tetromino = Tetromino(tetromino_info['shape'], tetromino_info['color'])
 
     def check_tetromino_landing(self):
         if self.current_tetromino.landing:
-            self.speed_up = False
-            self.add_tetromino_to_array()
-            self.get_new_tetromino()
-            self.sprite_group.add(self.current_tetromino.sprite_group)
+            if self.is_game_over():
+                self.__init__()
+            else:
+                self.speed_up = False
+                self.add_tetromino_to_array()
+                self.get_new_tetromino()
+                self.sprite_group.add(self.current_tetromino.sprite_group)
 
     def check_full_lines(self):
         row = HEIGHT - 1
@@ -48,27 +91,7 @@ class Tetris:
                     self.field_array[row][x].alive = False
                     self.field_array[row][x] = 0
 
-    # def control(self, key_pressed):
-    #     key_direction_mapping = {
-    #         pg.K_LEFT: 'left',
-    #         pg.K_RIGHT: 'right',
-    #         pg.K_UP: 'rotate',
-    #         pg.K_DOWN: 'down'
-    #     }
-    #     direction = key_direction_mapping.get(key_pressed)
-    #     if direction is not None:
-    #         if direction == 'rotate':
-    #             pivot_pos = self.current_tetromino.blocks[0].pos
-    #             positions = [block.rotate(pivot_pos) for block in self.current_tetromino.blocks]
-    #             if not self.is_collide(positions):
-    #                 self.current_tetromino.rotate(positions)
-    #         elif direction == 'down':
-    #             self.speed_up = True
-    #         else:
-    #             move_direction = MOVE_DIRECTIONS.get(direction)
-    #             positions = [block.pos + move_direction for block in self.current_tetromino.blocks]
-    #             if not self.is_collide(positions):
-    #                 self.current_tetromino.move(direction)
+                self.full_lines += 1
 
     def control(self, event):
         key_direction_mapping = {
@@ -80,7 +103,7 @@ class Tetris:
         }
 
         if event.type == pg.KEYDOWN:
-            key_code = event.key  # Access the key code directly
+            key_code = event.key
             direction = key_direction_mapping.get(key_code)
             if direction is not None:
                 if direction == 'rotate':
@@ -120,7 +143,14 @@ class Tetris:
                 self.current_tetromino.landing = True
         self.check_tetromino_landing()
         self.check_full_lines()
+        self.get_score()
         self.sprite_group.update()
+
+    def is_game_over(self):
+        if self.current_tetromino.blocks[0].pos.y == INIT_POS_OFFSET[1]:
+            pg.time.wait(100)
+            return True
+
 
     def draw_grid(self, screen):
         for x in range(self.board_width):
