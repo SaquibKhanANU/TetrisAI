@@ -5,13 +5,13 @@ import pygame.freetype as ft
 
 
 class Game:
-    def __init__(self):
+    def __init__(self, tetris):
         pg.init()
         pg.display.set_caption("Tetris")
         self.screen = pg.display.set_mode((WIN_RES))
         self.clock = pg.time.Clock()
         self.set_timer()
-        self.tetris = Tetris()
+        self.tetris = tetris
 
     def set_timer(self):
         self.user_event = pg.USEREVENT + 0
@@ -46,13 +46,22 @@ class Game:
                        text=f'HEIGHT: {self.tetris.height}', fgcolor='WHITE',
                        size=TILE_SIZE * 0.5)
         font.render_to(self.screen, (WIN_W * 0.65, WIN_H * 0.3),
-                       text=f'NUM HOLES: {self.tetris.number_of_holes}', fgcolor='WHITE',
+                       text=f'BUMPINESS: {self.tetris.bumpiness}', fgcolor='WHITE',
+                       size=TILE_SIZE * 0.5)
+        font.render_to(self.screen, (WIN_W * 0.65, WIN_H * 0.4),
+                       text=f'NUM HOLES: {self.tetris.num_holes}', fgcolor='WHITE',
                        size=TILE_SIZE * 0.5)
         font.render_to(self.screen, (WIN_W * 0.65, WIN_H * 0.5),
                        text=f'SCORE: {self.tetris.score}', fgcolor='white',
                        size=TILE_SIZE * 0.5)
-        font.render_to(self.screen, (WIN_W * 0.65, WIN_H * 0.4),
-                       text=f'NUM_LINES: {self.tetris.total_number_of_lines}', fgcolor='WHITE',
+        font.render_to(self.screen, (WIN_W * 0.65, WIN_H * 0.6),
+                       text=f'NUM_LINES: {self.tetris.num_lines}', fgcolor='WHITE',
+                       size=TILE_SIZE * 0.5)
+        font.render_to(self.screen, (WIN_W * 0.6, WIN_H * 0.7),
+                       text=f'TOTAL_NUM_LINES: {self.tetris.total_num_lines}', fgcolor='WHITE',
+                       size=TILE_SIZE * 0.5)
+        font.render_to(self.screen, (WIN_W * 0.6, WIN_H * 0.8),
+                       text=f'NUM_TETROMINOES: {self.tetris.num_tetrominoes}', fgcolor='WHITE',
                        size=TILE_SIZE * 0.5)
 
     def draw(self):
@@ -69,5 +78,6 @@ class Game:
 
 
 if __name__ == "__main__":
-    game = Game()
+    tetris = Tetris()
+    game = Game(tetris)
     game.run()
