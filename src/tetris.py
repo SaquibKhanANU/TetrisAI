@@ -95,12 +95,11 @@ class TetrisBoard:
         return rows_to_clear
 
     def get_board_properties(self, tetris_board):
-        points_per_line = {0: 0, 1: 100, 2: 300, 3: 700, 4: 1500}
         height, bumpiness = self.calculate_height_and_bumpiness(tetris_board)
         num_holes = self.calculate_num_holes(tetris_board)
         num_lines = len(self.calculate_num_lines(tetris_board))
-        score = points_per_line[num_lines]
-        return score, num_lines, num_holes, height, bumpiness
+        return num_lines, num_holes, height, bumpiness
+
 
     @staticmethod
     def print_board(tetris_board):
@@ -129,7 +128,9 @@ class Tetris:
         self.height = 0
         self.bumpiness = 0
         self.total_num_lines = 0
-        self.num_tetrominoes = 1
+        self.num_tetrominoes = 0
+        self.points_per_line = {0: 0, 1: 100, 2: 300, 3: 700, 4: 1500}
+
 
         self.game_over = False
         self.ai_move = True
@@ -140,18 +141,18 @@ class Tetris:
                 self.game_over = True
             else:
                 self.tetris_board.add_tetromino_to_board(self.current_tetromino, self.field_array)
-                self.get_new_tetromino()
                 self.ai_move = True
-                self.num_tetrominoes += 1
                 self.sprite_group.add(self.current_tetromino.sprite_group)
-                score, self.num_lines, self.num_holes, self.height, self.bumpiness = (
+                self.num_lines, self.num_holes, self.height, self.bumpiness = (
                     self.tetris_board.get_board_properties(self.field_array))
-                self.score += score
+                self.score += self.points_per_line[self.num_lines]
                 self.total_num_lines += self.num_lines
-                self.tetris_board.print_board(self.field_array)
+                self.num_tetrominoes += 1
+                self.get_new_tetromino()
+                # self.tetris_board.print_board(self.field_array)
 
     def get_new_tetromino(self):
-        tetromino_type = 'I'
+        tetromino_type = random.choice(list(TETROMINOES.keys()))
         tetromino_info = TETROMINOES[tetromino_type]
         self.current_tetromino = Tetromino(tetromino_info['shape'], tetromino_info['color'], tetromino_type)
         self.current_tetromino.shift_blocks(INIT_POS_OFFSET)
@@ -188,13 +189,14 @@ class Tetris:
     def update(self, anim_trigger, fast_anim_trigger):
         self.ai_move = False
         trigger = [anim_trigger, fast_anim_trigger][self.speed_up]
-        if trigger:
-            self.tetris_board.move_block_down(self.current_tetromino, self.field_array)
-        if self.current_tetromino.landing:
-            self.speed_up = False
-        self.check_tetromino_landing()
-        self.tetris_board.clear_lines(self.field_array)
-        self.sprite_group.update()
+        if not self.game_over:
+            if trigger:
+                self.tetris_board.move_block_down(self.current_tetromino, self.field_array)
+            if self.current_tetromino.landing:
+                self.speed_up = False
+            self.check_tetromino_landing()
+            self.tetris_board.clear_lines(self.field_array)
+            self.sprite_group.update()
 
     def draw_grid(self, screen):
         for x in range(self.board_width):
@@ -204,3 +206,6 @@ class Tetris:
     def draw(self, screen):
         self.draw_grid(screen)
         self.sprite_group.draw(screen)
+
+    def reset(self):
+        self.__init__()

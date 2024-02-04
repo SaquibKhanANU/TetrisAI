@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88564bc3-4e39-4632-9b2a-fde0022a8215" name="Changes" comment="game finished, now complete RL implementation">
-      <change afterPath="$PROJECT_DIR$/src/agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tetris_ai.py" afterDir="false" />
+    <list default="true" id="88564bc3-4e39-4632-9b2a-fde0022a8215" name="Changes" comment="ai can now visually play tetris">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tetris.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tetromino.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetromino.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tetris_ai.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/tetris_ai.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,32 +43,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.TetrisML.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.tetris (1).executor": "Run",
-    "Python.tetris_ai.executor": "Run",
-    "Python.tetris_board.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.DQ.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TetrisML.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tetris (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.tetris_ai.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tetris_board.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Saqui\PycharmProjects\TetrisML\src" />
       <recent name="C:\Users\Saqui\PycharmProjects\TetrisML\data\frames\frames_video1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.tetris_ai">
+    <configuration name="DQ" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TetrisML" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/DQ.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="TetrisML" type="PythonConfigurationType" factoryName="Python">
       <module name="TetrisML" />
       <option name="ENV_FILES" value="" />
@@ -122,6 +144,9 @@
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -188,6 +213,9 @@
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -205,8 +233,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.tetris_ai" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.DQ" />
         <item itemvalue="Python.tetris (1)" />
       </list>
     </recent_temporary>
@@ -227,7 +256,8 @@
       <option name="presentableId" value="Default" />
       <updated>1706404309890</updated>
       <workItem from="1706404325267" duration="24626000" />
-      <workItem from="1706577158864" duration="56464000" />
+      <workItem from="1706577158864" duration="78997000" />
+      <workItem from="1706935591862" duration="320000" />
     </task>
     <task id="LOCAL-00001" summary="Tetris collision">
       <option name="closed" value="true" />
@@ -261,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706673493833</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ai can now visually play tetris">
+      <option name="closed" value="true" />
+      <created>1706790721975</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706790721975</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +310,8 @@
     <MESSAGE value="Tetris line clearer" />
     <MESSAGE value="improve git collision timer and added drop mechanic" />
     <MESSAGE value="game finished, now complete RL implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="game finished, now complete RL implementation" />
+    <MESSAGE value="ai can now visually play tetris" />
+    <option name="LAST_COMMIT_MESSAGE" value="ai can now visually play tetris" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TetrisML$tetris_ai.coverage" NAME="tetris_ai Coverage Results" MODIFIED="1706786969877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
